@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'fxesbase',
         'USER': 'user',
         "PASSWORD": 'p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL',
-        'HOST': 'postgres://user:p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL@dpg-cnjo9a21hbls73dqtmjg-a.oregon-postgres.render.com/fxesbase',
+        'HOST': 'postgres://user:p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL@dpg-cnjo9a21hbls73dqtmjg-a/fxesbase',
         'PORT': '5432',
     }
 }
