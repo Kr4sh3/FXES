@@ -1,4 +1,5 @@
-from flask import Flask, requests
+from flask import Flask
+import requests
 from tweety import Twitter
 from flask_apscheduler import APScheduler
 
