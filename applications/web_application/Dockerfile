@@ -11,4 +11,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD [ "gunicorn", "--bind", "0.0.0.0:80", "FXES.wsgi:application"]
+CMD [ "python", "manage.py", "makemigrations", "&&", "python", "manage.py", "migrate", "&&", "gunicorn", "--bind", "0.0.0.0:80", "FXES.wsgi:application"]
