@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'FXES.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / 'fxesbase',
         'USER': 'user',
         "PASSWORD": 'p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL',
