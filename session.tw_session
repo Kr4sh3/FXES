@@ -1,0 +1,58 @@
+{
+    "cookies": "kdt=CbUkysWKltU9wbOGLFpz73zVsI4Pz2qPHDl8pNFG;twid=\"u=1185436508477632512\";ct0=96c565d95e5ff8eb60c19368f9056ac5;auth_token=20fa2ebdd3baed0891ce81d8047ad6a300b52c00;",
+    "user": {
+        "id": "1185436508477632512",
+        "rest_id": "1185436508477632512",
+        "created_at": "2019-10-19 06:04:29+00:00",
+        "date": "2019-10-19 06:04:29+00:00",
+        "entities": {
+            "description": {
+                "urls": []
+            },
+            "url": {
+                "urls": [
+                    {
+                        "display_url": "linktr.ee/Kr4she",
+                        "expanded_url": "https://linktr.ee/Kr4she",
+                        "url": "https://t.co/3MPBaXjM77",
+                        "indices": [
+                            0,
+                            23
+                        ]
+                    }
+                ]
+            }
+        },
+        "description": "Programmer, Game Designer, Musician, Artist, Jack of all trades, Master of some.",
+        "bio": "Programmer, Game Designer, Musician, Artist, Jack of all trades, Master of some.",
+        "fast_followers_count": "0",
+        "favourites_count": "231",
+        "followers_count": "5",
+        "friends_count": "8",
+        "has_custom_timelines": "False",
+        "is_translator": "False",
+        "listed_count": "0",
+        "location": null,
+        "media_count": "3",
+        "name": "Krashe",
+        "normal_followers_count": "5",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1185436508477632512/1696084490",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1673379746325970952/4VF32TDM_normal.jpg",
+        "profile_interstitial_type": null,
+        "protected": "False",
+        "screen_name": "Kr4sh3",
+        "username": "Kr4sh3",
+        "statuses_count": "5",
+        "translator_type": "none",
+        "verified": "False",
+        "can_dm": "True",
+        "following": "False",
+        "community_role": null,
+        "notifications_enabled": "False",
+        "notifications": "False",
+        "possibly_sensitive": "False",
+        "pinned_tweets": null,
+        "profile_url": "https://twitter.com/Kr4sh3",
+        "is_blocked": "False"
+    }
+}
