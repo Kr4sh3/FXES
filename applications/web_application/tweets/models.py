@@ -10,7 +10,7 @@ class User(models.Model):
 class Tweet(models.Model):
     associated_user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.CharField(max_length=280, unique=True)
-    date = models.DateTimeField("date published", default=datetime.datetime.now())
+    date = models.DateTimeField("date published")
     email_notified = models.BooleanField(default=False)
 
     def __str__(self):
