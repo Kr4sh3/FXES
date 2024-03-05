@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["fxes.onrender.com", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
     'rest_framework',
     'tweets.apps.TweetsConfig',
     'django.contrib.admin',
@@ -76,8 +77,9 @@ WSGI_APPLICATION = 'FXES.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 import dj_database_url
+import os
 DATABASES = { 'default' : dj_database_url.config(
-    default='sqlite://///db.sqlite3') }
+    default='sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))) }
 
 
 # Password validation
