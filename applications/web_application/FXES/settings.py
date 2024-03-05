@@ -75,16 +75,9 @@ WSGI_APPLICATION = 'FXES.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fxesbase',
-        'USER': 'user',
-        "PASSWORD": 'p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL',
-        'HOST': 'fxes-database',
-        'PORT': '5432',
-    }
-}
+import dj_database_url
+DATABASES = { 'default' : dj_database_url.config(
+    default='sqlite://///db.sqlite3') }
 
 
 # Password validation
