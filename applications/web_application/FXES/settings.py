@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'FXES.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': BASE_DIR / 'fxesbase',
+        'USER': 'user',
+        "PASSWORD": 'p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL',
+        'HOST': 'postgres://user:p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL@dpg-cnjo9a21hbls73dqtmjg-a.oregon-postgres.render.com/fxesbase',
+        'PORT': '5432',
     }
 }
 
