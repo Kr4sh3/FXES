@@ -9,8 +9,8 @@ RUN apt-get update \
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
-
-
 COPY . .
+
+RUN python manage.py migrate
 
 CMD [ "gunicorn", "--bind", "0.0.0.0:80", "FXES.wsgi:application"]
