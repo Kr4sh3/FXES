@@ -7,4 +7,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD [ "gunicorn", "--bind", "0.0.0.0:80", "FXES.wsgi:application"]
+CMD [ "gunicorn", "--bind", "0.0.0.0:8000", "main:app"]

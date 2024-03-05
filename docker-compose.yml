@@ -3,9 +3,14 @@ version: '3'
 services:
   web_application:
     build: ./applications/web_application
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:80
     volumes:
       - ./applications/web_application/tweets:/tweets
       - ./applications/web_application/FXES:/FXES
     ports:
-      - "8000:8000"
+      - "80:80"
+  data_collector:
+    build: ./applications/data_collector
+    command: python main.py
+    ports:
+      - "5000:5000"

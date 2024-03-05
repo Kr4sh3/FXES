@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-eq9mcq#c!_9j&i7g8vkv2l4te)jb^7fx_f7@72p5ed!l_(!ppe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["fxes.onrender.com"]
+ALLOWED_HOSTS = ["fxes.onrender.com", "localhost"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'tweets.apps.TweetsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,3 +123,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_ALLOW_ALL = True
