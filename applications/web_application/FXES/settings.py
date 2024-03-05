@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'FXES.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'fxesbase',
+        'NAME': 'fxesbase',
         'USER': 'user',
         "PASSWORD": 'p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL',
         'HOST': 'postgres://user:p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL@dpg-cnjo9a21hbls73dqtmjg-a.oregon-postgres.render.com/fxesbase',
