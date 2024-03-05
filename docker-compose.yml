@@ -3,7 +3,7 @@ version: '3'
 services:
   web_application:
     build: ./applications/web_application
-    command: python3 manage.py runserver 0.0.0.0:80
+    command: python manage.py runserver 0.0.0.0:80
     volumes:
       - ./applications/web_application/tweets:/tweets
       - ./applications/web_application/FXES:/FXES
