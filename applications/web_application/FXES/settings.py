@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'fxesbase',
         'USER': 'user',
         "PASSWORD": 'p8cw5GyNsCyeHsXW0fogfCKzs3p92xZL',
-        'HOST': 'dpg-cnjo9a21hbls73dqtmjg-a',
+        'HOST': 'fxes-database',
         'PORT': '5432',
     }
 }
