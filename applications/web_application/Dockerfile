@@ -11,6 +11,9 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-RUN python manage.py migrate
+FROM nginx:1.25
 
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "FXES.wsgi:application"]
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "FXES.wsgi:application"]
