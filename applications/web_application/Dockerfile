@@ -11,6 +11,6 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-
+RUN python manage.py collectstatic --no-input
 
 CMD ["gunicorn", "--bind", "0.0.0.0:80", "FXES.wsgi:application"]
