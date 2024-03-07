@@ -20,9 +20,7 @@ def index():
 
 @app.route('/test-message-broker')
 def test_message_broker():
-    response = requests.get("https://fxes.onrender.com/api/users").json()
-    job = q.enqueue(test_add_user)
-    return f'Job {job.id} has been added to queue!, {len(q)} tasks in the queue!, user:{response[0]['username']}' 
+    q.enqueue(test_add_user)
 
 def test_add_user():
     requests.post("https://fxes.onrender.com/api/users", {"username":"test1"})
