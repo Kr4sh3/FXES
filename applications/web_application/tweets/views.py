@@ -8,7 +8,7 @@ def index(request):
     list = Tweet.objects.all()
     str = ''
     for tweet in list:
-        str.append(tweet.associated_user.username + ": " + tweet.text + "\n")
+        str += tweet.associated_user.username + ": " + tweet.text + "\n"
     return HttpResponse(str)
 
 from rest_framework import viewsets, status
