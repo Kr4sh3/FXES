@@ -5,9 +5,11 @@ from .serializers import TweetSerializer, UserSerializer, SearchTermSerializer
 from rest_framework.response import Response
 
 def index(request):
-    list = Tweet.objects.order_by("-date")[:5]
-    output = ", ".join([t.text for t in list])
-    return HttpResponse(output)
+    list = Tweet.objects.all()
+    str = ''
+    for tweet in list:
+        str.append(tweet.associated_user.username + ": " + tweet.text + "\n")
+    return HttpResponse(str)
 
 from rest_framework import viewsets, status
 
