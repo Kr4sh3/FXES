@@ -15,11 +15,26 @@ def run_analysis():
         if tweet['email_notified'] == False:
             unsent_tweets.append(tweet)
     str = ''
+    keywords = requests.get("https://fxes.onrender.com/api/searchterms").json()
     for tweet in unsent_tweets:
         user = requests.get(f"https://fxes.onrender.com/api/users/{tweet['associated_user']}").json()
         username = user['username']
-        str += username + ": " + tweet['text'] + " \n"
+        user_keywords = []
+        for keyword in keywords:
+            if keyword['associated_user'] == username:
+                user_keywords.append(keyword['term'])
+        if does_tweet_contain_keywords(tweet, user_keywords):
+            str += username + ": " + tweet['text'] + " \n"
+        tweet['email_notified'] = True
+        requests.put(f"https://fxes.onrender.com/api/tweets/{tweet['id']}",tweet)
     return str
+
+def does_tweet_contain_keywords(text, keywords):
+    for keyword in keywords:
+        if keyword in text:
+            return True
+        else:
+            return False
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
