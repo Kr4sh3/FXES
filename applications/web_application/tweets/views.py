@@ -9,7 +9,7 @@ def index(request):
     terms = SearchTerm.objects.all()
     str = 'filter terms: '
     for term in terms:
-        str = term.term + ", "
+        str += term.term + ", "
     str += "\n"
     #searchterms = SearchTerm.objects.all()
     #terms = []
