@@ -35,6 +35,7 @@ def does_tweet_contain_keywords(text, keywords):
             return True
         else:
             return False
+    return True
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
