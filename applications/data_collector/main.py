@@ -42,7 +42,7 @@ def scrape_and_send_tweets(user_id):
         if hasattr(tweet, "text"):
             # Build a json object and send it over REST to django web app
             tweet_obj = {
-                "text": tweet['text'],
+                "text": tweet['text'].encode('utf-8'),
                 "associated_user": user_id,
                 "date": datetime.today()
             }

@@ -7,14 +7,14 @@ from rest_framework.response import Response
 def index(request):
     list = Tweet.objects.all()
     str = ''
-    searchterms = SearchTerm.objects.all()
-    terms = []
-    for searchterm in searchterms:
-        terms.append(searchterm.term)
+    #searchterms = SearchTerm.objects.all()
+    #terms = []
+    #for searchterm in searchterms:
+    #    terms.append(searchterm.term)
     for tweet in list:
-        for term in terms:
-            if term in tweet:
-                str += tweet.associated_user.username + ": " + tweet.text + "\n"
+    #    for term in terms:
+    #        if term in tweet:
+        str += tweet.associated_user.username + ": " + tweet.text + "\n"
     return HttpResponse(str,content_type="text/plain")
 
 from rest_framework import viewsets, status
