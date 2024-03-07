@@ -13,7 +13,7 @@ twitter_session = Twitter("session")
 def index():
     return 'This is the route for the data collector!'
 
-@scheduler.task('interval', id='get_tweets', minutes=5)
+@scheduler.task('interval', id='get_tweets', hours=24)
 def get_tweets():
     # Login
     twitter_session.start("scrapertestzWm", "zWmAYotd&!t$mR38")
