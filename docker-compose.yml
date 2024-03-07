@@ -14,3 +14,8 @@ services:
     command: python main.py
     ports:
       - "5000:5000"
+  data_analyzer:
+    build: ./applications/data_analyzer
+    command: python main.py
+    ports:
+      - "6000:6000"
