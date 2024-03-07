@@ -18,12 +18,8 @@ twitter_session = Twitter("session")
 def index():
     return 'This is the route for the data collector!'
 
-@app.route('/test-message-broker')
-def test_message_broker():
-    q.enqueue(test_add_user)
-
-def test_add_user():
-    requests.post("https://fxes.onrender.com/api/users", {"username":"test1"})
+def run_analysis():
+    requests.get("https://fxes-data-analyzer.onrender.com/run-analysis")
 
 @app.route('/retrieve-tweets')
 @scheduler.task('interval', id='get_tweets', hours=24)
@@ -35,6 +31,7 @@ def get_tweets():
     for user in users:
         user_id = user['id']
         scrape_and_send_tweets(user_id)
+    q.enqueue(run_analysis)
         
 def scrape_and_send_tweets(user_id):
     # Scrape twitter user for tweets with tweety
