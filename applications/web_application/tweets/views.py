@@ -7,7 +7,10 @@ from rest_framework.response import Response
 def index(request):
     list = Tweet.objects.all()
     terms = SearchTerm.objects.all()
-    str = ''
+    str = 'filter terms: '
+    for term in terms:
+        str = term.term + ", "
+    str += "\n"
     #searchterms = SearchTerm.objects.all()
     #terms = []
     #for searchterm in searchterms:
