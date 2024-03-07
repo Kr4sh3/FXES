@@ -32,6 +32,7 @@ def get_tweets():
         user_id = user['id']
         scrape_and_send_tweets(user_id)
     q.enqueue(run_analysis)
+    return "Successfully retrieved tweets!"
         
 def scrape_and_send_tweets(user_id):
     # Scrape twitter user for tweets with tweety
