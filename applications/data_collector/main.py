@@ -5,6 +5,14 @@ from flask_apscheduler import APScheduler
 from datetime import datetime, date
 import json
 
+import redis
+from rq import Worker, Queue, Connection
+conn = redis.from_url("redis://red-cnksjben7f5s73b1v9q0:6379")
+q = Queue(connection=conn)
+def print_test():
+    print("test")
+job = q.enqueue_call(func=print_test, result_ttl=5000)
+
 app = Flask(__name__)
 scheduler = APScheduler()
 twitter_session = Twitter("session")
