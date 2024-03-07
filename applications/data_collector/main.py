@@ -22,7 +22,7 @@ def index():
 def test_message_broker():
     users = requests.get("https://fxes.onrender.com/api/users").json()
     user_id = users[0]['id']
-    job = q.enqueue(scrape_and_send_tweets,user_id)
+    job = q.enqueue(func=scrape_and_send_tweets,args=(user_id,))
     return f'Job {job.id} has been added to queue!, {len(q)} tasks in the queue!'
 
 
@@ -34,7 +34,7 @@ def get_tweets():
     users = requests.get("https://fxes.onrender.com/api/users").json()
     for user in users:
         user_id = user['id']
-        q.enqueue(scrape_and_send_tweets, user_id)
+        q.enqueue(func=scrape_and_send_tweets,args=(user_id,))
         
 def scrape_and_send_tweets(user_id):
     # Scrape twitter user for tweets with tweety
